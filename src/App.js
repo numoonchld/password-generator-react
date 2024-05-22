@@ -29,7 +29,10 @@ function App() {
 
     const newPasswordList = [...passwordHistory, newPassword];
     setPasswordHistory(newPasswordList);
-    localStorage.setItem("passwordHistoryStorage", newPasswordList);
+    localStorage.setItem(
+      "passwordHistoryStorage",
+      JSON.stringify(newPasswordList)
+    );
   };
 
   const handleCopyToClipboard = () => {
@@ -51,6 +54,7 @@ function App() {
     <>
       <div className="container mt-5">
         <h1> Password Generator </h1>
+        <h6> Submission by Raghavendra Saralaya</h6>
         <hr />
         <div>
           <h2>Settings</h2>
